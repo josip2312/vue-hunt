@@ -23,6 +23,7 @@ $font-p: #abd1c6;
 
 $bp-4k: 125em; //2000px
 $bp-x-large: 87.5em; //1400px
+$bp-larger: 75em; //1200px
 $bp-large: 62.5em; //1000px
 $bp-medium: 50em; //800px
 $bp-small: 43.75em; //700px
@@ -31,14 +32,17 @@ $bp-smallest: 31.25em; //500px
 
 html {
 	box-sizing: border-box;
-	font-size: 62.5%;
+	font-size: 60%;
 	scroll-behavior: smooth;
 
 	@media only screen and(min-width:$bp-x-large) {
-		font-size: 70%;
+		font-size: 80%;
 	}
 	@media only screen and(min-width:$bp-4k) {
-		font-size: 100%;
+		font-size: 120%;
+	}
+	@media only screen and(max-width:$bp-larger) {
+		font-size: 57.5%;
 	}
 	@media only screen and(max-width:$bp-large) {
 		font-size: 55%;
@@ -66,7 +70,8 @@ body {
 	font-weight: 600;
 }
 .heading-2 {
-	font-size: 2.6rem;
+	font-family: 'Nunito' sans-serif;
+	font-size: 2.4rem;
 	font-weight: 500;
 }
 .heading-3 {
@@ -97,13 +102,58 @@ a {
 .btn-sec {
 	padding: 1rem 2.2rem;
 }
+@mixin absHeading {
+	position: absolute;
+	top: 3rem;
+
+	left: 7.5%;
+	text-transform: uppercase;
+	letter-spacing: 0.7rem;
+}
+
 @keyframes drop {
 	0% {
 		opacity: 0;
+
 		transform: translateY(-5rem);
 	}
+
 	100% {
 		opacity: 1;
+
 		transform: translateY(0rem);
 	}
+}
+@keyframes left {
+	0% {
+		opacity: 0;
+
+		transform: translateX(-50%);
+	}
+
+	100% {
+		opacity: 1;
+
+		transform: translateX(0);
+	}
+}
+@keyframes up {
+	0% {
+		opacity: 0;
+
+		transform: translateY(5rem);
+	}
+
+	100% {
+		opacity: 1;
+
+		transform: translateY(0rem);
+	}
+}
+.before-enter {
+	opacity: 0;
+	animation: none;
+}
+.enter {
+	animation: up 1s forwards ease;
 }

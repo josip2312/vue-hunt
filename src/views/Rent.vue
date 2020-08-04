@@ -1,17 +1,25 @@
 <template>
 	<section id="rent">
-		<div class="pictures">
-			<img :src="makeUrl(mainFile)" class="main-picture" alt="" />
-
-			<div class="preview-pictures">
+		<h2 class="heading-2">Smjestaj</h2>
+		<div class="container">
+			<div class="pictures">
 				<img
-					v-for="(photo, index) in photos"
-					:key="index"
-					:src="makeUrl(photo.filename)"
+					:src="makeUrl(mainFile)"
+					class="main-picture"
 					alt=""
-					@click="changePicture(photo.filenameBig)"
-					:class="{ active: photo.filenameBig === mainFile }"
+					v-scrollanimation
 				/>
+
+				<div class="preview-pictures" v-scrollanimation>
+					<img
+						v-for="(photo, index) in photos"
+						:key="index"
+						:src="makeUrl(photo.filename)"
+						@click="changePicture(photo.filenameBig)"
+						:class="{ active: photo.filenameBig === mainFile }"
+						alt="Acommodation image"
+					/>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -54,36 +62,54 @@ export default {
 #rent {
 	background-color: $primary;
 	padding: 5rem 0;
-
-	@media only screen and(max-width:$bp-small) {
-		padding: 3rem 0;
+	padding-top: 10rem;
+	position: relative;
+}
+.heading-2 {
+	@include absHeading;
+}
+.container {
+	width: 85%;
+	background-color: $primary-dark;
+	margin: 0 auto;
+	border-radius: 0.5rem;
+	@media only screen and(max-width:$bp-smallest) {
+		border-radius: 3px;
 	}
 }
 .pictures {
-	width: 50%;
-
-	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	margin: 0 auto;
+
+	width: 65%;
+	@media only screen and(max-width:$bp-smallest) {
+		width: 90%;
+	}
+
 	.main-picture {
 		width: 100%;
 		object-fit: cover;
+		border-radius: 3px;
 		overflow: hidden;
 		margin-bottom: 1.5rem;
 		transition: all 0.2s;
 	}
 	.preview-pictures {
-		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 
+		width: 100%;
 		img {
+			border-radius: 3px;
+			overflow: hidden;
 			flex: 1;
 			transition: all 0.2s ease;
-			opacity: 0.6;
+			opacity: 0.5;
 			cursor: pointer;
 			width: 33.3333%;
 		}

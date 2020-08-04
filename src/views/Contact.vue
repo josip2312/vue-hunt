@@ -1,11 +1,25 @@
 <template>
 	<section id="contact">
-		<h2 class="heading-2 dark">Javi se!</h2>
-		<form action="" class="form">
+		<h2 class="heading-2 dark">Kontakt</h2>
+		<h3 class="heading-3 dark" v-scrollanimation>Javi se!</h3>
+		<form action="" class="form" v-scrollanimation>
 			<div class="form-group">
 				<label for="email">Email adresa</label>
 				<input type="email" id="email" name="email" />
-				<img class="icon-email" src="../assets/img/email.svg" alt="" />
+				<img
+					class="icon-email"
+					src="../assets/img/icons/email.svg"
+					alt="Email icon"
+				/>
+			</div>
+			<div class="form-group">
+				<label for="subject">Naslov</label>
+				<input type="text" id="subject" name="subject" />
+				<img
+					class="icon-subject"
+					src="../assets/img/icons/title.svg"
+					alt="Title icon"
+				/>
 			</div>
 			<div class="form-group">
 				<label for="message">Poruka</label>
@@ -15,9 +29,13 @@
 					cols="5"
 					rows="5"
 				></textarea>
-				<img class="icon-text" src="../assets/img/text.svg" alt="" />
+				<img
+					class="icon-text"
+					src="../assets/img/icons/text.svg"
+					alt="Content icon"
+				/>
 			</div>
-			<a href="#" class="btn">Dalje</a>
+			<button href="#" class="btn">Pošalji</button>
 		</form>
 	</section>
 </template>
@@ -30,82 +48,86 @@ export default {
 
 <style lang="scss" scoped>
 #contact {
-	//min-height: 90vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	background-color: $secondary;
-	padding: 5rem;
 
-	h2 {
-		margin-bottom: 2.5rem;
+	background-color: $secondary;
+	padding: 5rem 0;
+	position: relative;
+	@media only screen and(max-width:$bp-smallest) {
+		padding-top: 9rem;
 	}
 }
 
+.heading-2 {
+	@include absHeading;
+}
+.heading-3 {
+	margin-bottom: 2rem;
+}
 .form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
 	width: 45rem;
 	padding: 4rem 0;
 	background-color: $primary;
-	display: flex;
-	flex-direction: column;
 	border-radius: 3px;
-	@media only screen and(max-width:$bp-medium) {
-		width: 50%;
-	}
-	@media only screen and(max-width:$bp-small) {
-		width: 62.5%;
-	}
-	@media only screen and(max-width:$bp-smaller) {
-		width: 75%;
-	}
+
 	@media only screen and(max-width:$bp-smallest) {
-		width: 90%;
+		width: 75vw;
 	}
 	.form-group {
-		margin: 0 auto;
-		width: 75%;
 		display: flex;
 		flex-direction: column;
+
+		margin: 0 auto;
+		width: 75%;
 		position: relative;
 		label {
-			margin-bottom: 1.5rem;
-		}
-		input {
 			margin-bottom: 1rem;
-			border: none;
-			padding: 1rem 2rem;
-			padding-left: 5rem;
-			outline: none;
-			caret-color: $font-dark;
-			color: $font-dark;
-			font-size: 1.6rem;
 		}
+		input,
 		textarea {
 			margin-bottom: 2rem;
-			padding: 1rem 2rem;
+			padding: 0.9rem 2rem;
 			padding-left: 5rem;
+			border: none;
 			outline: none;
 			caret-color: $font-dark;
 			color: $font-dark;
 			font-size: 1.8rem;
+			background-color: $font-white;
+			border: 2px solid $font-white;
+			transition: all 0.2s ease;
 		}
-		.icon-email {
+		input:focus,
+		textarea:focus {
+			border: 2px solid $accent;
+		}
+
+		.icon-email,
+		.icon-subject {
 			position: absolute;
-			bottom: 1.8rem;
+			bottom: 3rem;
 			left: 1rem;
 			width: 2rem;
 			height: 2rem;
+			transform: rotate(0);
 		}
 		.icon-text {
 			position: absolute;
-			top: 5rem;
+			top: 4.5rem;
 			left: 1rem;
 			width: 2rem;
 			height: 2rem;
 		}
 	}
-	a {
+	button {
 		width: 75%;
 		margin: 0 auto;
 	}

@@ -1,8 +1,11 @@
 <template>
 	<section id="locations">
-		<article class="location-article">
+		<h2 class="heading-2 dark">
+			Lokacije
+		</h2>
+		<article class="location-article" v-scrollanimation>
 			<div class="location-image">
-				<img src="../assets/img/1.jpg" alt="" />
+				<img src="../assets/img/1.jpg" alt="Nature photo" />
 			</div>
 			<div class="location-textbox">
 				<div class="location-text">
@@ -12,7 +15,7 @@
 				<a href="#rent" class="btn btn-sec">Vidi smjestaj</a>
 			</div>
 		</article>
-		<article class="location-article reverse">
+		<article class="location-article reverse" v-scrollanimation>
 			<div class="location-textbox">
 				<div class="location-text">
 					Lov se odvija u Bosanskom Grahovu.
@@ -20,7 +23,7 @@
 				<a href="#rent" class="btn btn-sec">Lovi</a>
 			</div>
 			<div class="location-image">
-				<img src="../assets/img/1.jpg" alt="" />
+				<img src="../assets/img/1.jpg" alt="Nature photo" />
 			</div>
 		</article>
 	</section>
@@ -34,13 +37,18 @@ export default {
 </script>
 <style lang="scss" scoped>
 #locations {
-	min-height: 90vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+
+	min-height: 90vh;
 	background-color: $secondary;
 	padding: 5rem 0;
+	position: relative;
+}
+.heading-2 {
+	@include absHeading;
 }
 .location-article {
 	display: flex;
@@ -83,8 +91,8 @@ export default {
 		flex-direction: column;
 		justify-content: flex-start;
 		align-items: center;
-		text-align: center;
 
+		text-align: center;
 		height: 100%;
 
 		.location-text {
@@ -102,8 +110,6 @@ export default {
 	}
 }
 .reverse {
-	.location-textbox {
-	}
 	@media only screen and(max-width:$bp-medium) {
 		flex-direction: column-reverse;
 	}

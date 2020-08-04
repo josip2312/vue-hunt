@@ -1,7 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import scrollAnimation from './directives/scrollAnimation';
 
+Vue.directive('scrollanimation', scrollAnimation);
 //make a seperate branch for deployment with all static assets
 
 Vue.config.productionTip = false;

@@ -2,14 +2,14 @@
 	<footer id="footer">
 		<div class="footer-top">
 			<div class="footer-contact">
-				<img src="../assets/img/phone.svg" alt="" />
+				<img src="../assets/img/icons/phone.svg" alt="Phone icon" />
 				<span>063-132-823</span>
 			</div>
 
 			<div class="footer-social">
-				<img src="../assets/img/fb.svg" alt="" />
-				<img src="../assets/img/ig.svg" alt="" />
-				<img src="../assets/img/wapp.svg" alt="" />
+				<img src="../assets/img/icons/fb.svg" alt="Facebook" />
+				<img src="../assets/img/icons/ig.svg" alt="Instagram" />
+				<img src="../assets/img/icons/wapp.svg" alt="WhatsApp" />
 			</div>
 		</div>
 		<div class="footer-bottom">
@@ -32,23 +32,28 @@ export default {
 </script>
 <style lang="scss" scoped>
 #footer {
-	min-height: 30vh;
-	background-color: $primary;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	min-height: 30vh;
+	background-color: $primary;
 	color: $font-p;
+	@media only screen and(max-width:$bp-small) {
+		padding-bottom: 9vh;
+	}
 }
 .footer-top {
-	width: 75%;
-	flex: 2;
 	display: flex;
-
 	justify-content: space-around;
 	align-items: center;
+
+	width: 75%;
+	flex: 2;
 	@media only screen and(max-width:$bp-smallest) {
 		width: 90%;
 	}
+
 	.footer-contact {
 		display: flex;
 		justify-content: space-between;
@@ -60,11 +65,11 @@ export default {
 		}
 	}
 	.footer-social {
-		width: 30%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 
+		width: 30%;
 		img {
 			width: 2rem;
 			height: 2rem;
@@ -77,18 +82,20 @@ export default {
 }
 .footer-bottom {
 	flex: 1;
-	width: 100%;
 	display: flex;
 	align-items: center;
+
+	width: 100%;
 	background-color: #022b29;
 	font-size: 1.2rem;
 	&--container {
-		text-align: center;
-		margin: 0 auto;
-		width: 75%;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		text-align: center;
+		margin: 0 auto;
+		width: 75%;
 		@media only screen and(max-width:$bp-smallest) {
 			width: 90%;
 		}

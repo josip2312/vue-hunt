@@ -2,29 +2,28 @@
 	<header id="header" :class="{ scrolled: scrollPosition > 500 }">
 		<img
 			class="mobile-menu"
-			src="../assets/img/menu.svg"
-			alt=""
+			src="../assets/img/icons/menu.svg"
+			alt="Menu icon"
 			@click="toggleSidebar"
 			:class="{ active: toggled }"
 			v-click-outside="hideSidebar"
 		/>
 		<div class="mobile-nav">
 			<a href="#landing" class="mobile-nav__home">
-				<img src="../assets/img/home.svg" alt="" />
+				<img src="../assets/img/icons/home.svg" alt="Home icon" />
 				<span>Pocetna</span>
 			</a>
 			<a href="#locations" class="mobile-nav__location">
-				<img src="../assets/img/bed.svg" alt="" />
+				<img src="../assets/img/icons/bed.svg" alt="Bed icon" />
 				<span>Smjestaj</span>
 			</a>
 			<a href="#contact" class="mobile-nav__contact">
-				<img src="../assets/img/email2.svg" alt="" />
+				<img src="../assets/img/icons/email2.svg" alt="Email icon" />
 				<span>Kontakt</span>
 			</a>
 		</div>
 		<nav class="navbar">
 			<h3 class="heading-3">Sljuka</h3>
-
 			<ul :class="{ visible: toggled }">
 				<li><a href="#landing">Pocetna</a></li>
 				<li><a href="#gallery">Galerija</a></li>
@@ -134,7 +133,6 @@ export default {
 		}
 
 		li {
-			font-size: 1.6rem;
 			a {
 				color: $grey;
 			}
@@ -158,7 +156,7 @@ export default {
 
 		padding: 1.1rem;
 		position: fixed;
-		right: 12%;
+		right: 7.5%;
 		top: 1.5vh;
 
 		border-radius: 50%;
@@ -175,6 +173,10 @@ export default {
 .mobile-nav {
 	display: none;
 	@media only screen and(max-width:$bp-small) {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+
 		z-index: 10;
 		background-color: $primary-dark;
 		position: fixed;
@@ -182,17 +184,16 @@ export default {
 		left: 0;
 		height: 9vh;
 		width: 100%;
-		display: flex;
-		justify-content: space-around;
-		align-items: center;
 
 		& > * {
-			font-size: 1.8rem;
-			flex: 1;
-			text-align: center;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+
+			font-size: 1.8rem;
+			flex: 1;
+			text-align: center;
+
 			img {
 				fill: #fff;
 				margin-right: 1rem;

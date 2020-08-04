@@ -18,9 +18,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 #landing {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	height: 100vh;
 	width: 100%;
-	display: block;
 	background-color: #000;
 	position: relative;
 	z-index: 0;
@@ -45,20 +48,18 @@ export default {
 
 .hero {
 	display: block;
+	width: 50vw;
+	@media only screen and(max-width:$bp-small) {
+		width: 70vw;
+	}
+	margin-top: -7.5rem;
 	.landing-title {
 		display: block;
-		position: absolute;
-		top: 40%;
-		left: 40%;
-		transform: translate(-40%, -40%);
-
-		@media only screen and(max-width:$bp-medium) {
-			left: 50%;
-			transform: translate(-50%, -40%);
+		width: 50vw;
+		@media only screen and(max-width:$bp-small) {
+			width: 70vw;
 		}
-		@media only screen and(max-width:$bp-smallest) {
-			width: 75%;
-		}
+		animation: drop 1s ease;
 
 		h1 {
 			padding: 2rem 0;
