@@ -57,8 +57,8 @@ export default {
 		}
 		.x-icon {
 			position: absolute;
-			top: -3.5rem;
-			right: -3.5rem;
+			top: -4rem;
+			right: -4rem;
 			width: 4rem;
 			height: 4rem;
 			padding: 0.8rem;
@@ -67,7 +67,7 @@ export default {
 			cursor: pointer;
 			@media only screen and(max-width:$bp-smallest) {
 				top: -3.5rem;
-				right: -2rem;
+				right: -2.5rem;
 			}
 		}
 	}

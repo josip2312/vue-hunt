@@ -2,7 +2,7 @@
 	<section id="contact">
 		<h2 class="heading-2 dark">Kontakt</h2>
 		<h3 class="heading-3 dark" v-scrollanimation>Javi se!</h3>
-		<form action="" class="form" v-scrollanimation>
+		<form class="form" v-scrollanimation @submit.prevent="">
 			<div class="form-group">
 				<label for="email">Email adresa</label>
 				<input type="email" id="email" name="email" />

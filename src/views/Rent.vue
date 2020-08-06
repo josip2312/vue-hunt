@@ -6,7 +6,7 @@
 				<img
 					:src="makeUrl(mainFile)"
 					class="main-picture"
-					alt=""
+					alt="Acommodation image"
 					v-scrollanimation
 				/>
 

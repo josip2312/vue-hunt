@@ -2,8 +2,14 @@
 	<footer id="footer">
 		<div class="footer-top">
 			<div class="footer-contact">
-				<img src="../assets/img/icons/phone.svg" alt="Phone icon" />
-				<span>063-132-823</span>
+				<div class="location">
+					<img
+						src="../assets/img/icons/location.svg"
+						alt="Location"
+					/>
+					<span>Prisoje 80240, BiH</span>
+				</div>
+				<span>Tomislavgrad</span>
 			</div>
 
 			<div class="footer-social">
@@ -56,8 +62,14 @@ export default {
 
 	.footer-contact {
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+
+		.location {
+			display: flex;
+			align-items: center;
+			margin-bottom: 1rem;
+		}
 		img {
 			margin-right: 1rem;
 			width: 2rem;

@@ -1,5 +1,20 @@
 <template>
 	<main id="landing">
+		<div class="landing-info">
+			<div class="contact-1">
+				<img src="../assets/img/icons/phone2.svg" alt="Phone icon" />
+				<span>063-132-823</span>
+			</div>
+			<div class="contact-2">
+				<img src="../assets/img/icons/phone2.svg" alt="Phone icon" />
+				<span>063-213-321</span>
+			</div>
+
+			<a href="#contact" class="email">
+				<img src="../assets/img/icons/email2.svg" alt="Email icon" />
+				<span>saric.brane@gmail.com</span>
+			</a>
+		</div>
 		<div class="hero">
 			<div class="landing-title">
 				<h1 class="heading-1">Lovacka agencija Sljuka</h1>
@@ -45,20 +60,49 @@ export default {
 	background-repeat: no-repeat;
 	opacity: 0.7;
 }
+.landing-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	position: absolute;
+	top: 12.5vh;
+	left: 7.5%;
+	font-size: 1.4rem;
+	color: $font-p;
+	a {
+		text-decoration: none;
+		color: $font-p;
+	}
+	& > * {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 1rem;
 
+		img {
+			width: 2rem;
+			height: 2rem;
+			margin-right: 1.5rem;
+		}
+	}
+}
 .hero {
-	display: block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	width: 50vw;
 	@media only screen and(max-width:$bp-small) {
+		width: 65vw;
+	}
+	@media only screen and(max-width:$bp-smallest) {
 		width: 70vw;
 	}
-	margin-top: -7.5rem;
+	margin-top: -7rem;
 	.landing-title {
 		display: block;
-		width: 50vw;
-		@media only screen and(max-width:$bp-small) {
-			width: 70vw;
-		}
+		width: 100%;
+
 		animation: drop 1s ease;
 
 		h1 {
