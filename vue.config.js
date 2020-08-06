@@ -1,3 +1,7 @@
+const path = require('path');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
+
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 	css: {
 		loaderOptions: {
@@ -7,5 +11,17 @@ module.exports = {
           `,
 			},
 		},
+	},
+	chainWebpack: (config) => {
+		config
+			.plugin('prerender-spa-plugin')
+			.use(PrerenderSpaPlugin)
+			.init(
+				(Plugin) =>
+					new Plugin({
+						staticDir: path.join(__dirname, 'dist'),
+						routes: ['/'],
+					}),
+			);
 	},
 };

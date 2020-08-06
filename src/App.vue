@@ -19,6 +19,14 @@ import Locations from '@/views/Locations.vue';
 import Rent from '@/views/Rent.vue';
 import Contact from '@/views/Contact.vue';
 export default {
+	metaInfo: {
+		title: 'Lovacka agencija Sljuka',
+		titleTemplate: '%s - Prisoje',
+		htmlAttrs: {
+			lang: 'en',
+			amp: true,
+		},
+	},
 	components: {
 		Header,
 		Footer,

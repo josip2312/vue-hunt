@@ -7,6 +7,10 @@ const routes = [
 	{
 		path: '/',
 		name: 'Landing',
+		meta: {
+			title: 'Lovacka agencija Sljuka',
+			content: 'Pocetna stranica',
+		},
 		component: () =>
 			import(/* webpackChunkName: "about" */ '../views/Landing.vue'),
 	},
