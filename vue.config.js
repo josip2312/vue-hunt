@@ -13,6 +13,8 @@ module.exports = {
 		},
 	},
 	chainWebpack: (config) => {
+		if (process.env.NODE_ENV !== 'production') return;
+
 		config
 			.plugin('prerender-spa-plugin')
 			.use(PrerenderSpaPlugin)

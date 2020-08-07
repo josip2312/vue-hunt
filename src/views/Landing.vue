@@ -69,6 +69,8 @@ export default {
 	left: 7.5%;
 	font-size: 1.4rem;
 	color: $font-p;
+	transition: all;
+	animation: left 1s forwards ease;
 	a {
 		text-decoration: none;
 		color: $font-p;
@@ -103,7 +105,7 @@ export default {
 		display: block;
 		width: 100%;
 
-		animation: drop 1s ease;
+		animation: drop 1s forwards ease;
 
 		h1 {
 			padding: 2rem 0;

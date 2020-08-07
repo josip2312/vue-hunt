@@ -48,7 +48,10 @@ export default {
 	.img-container {
 		position: relative;
 		margin: 0 auto;
-		width: 50%;
+		width: 55%;
+		@media only screen and(max-width:$bp-large) {
+			width: 65%;
+		}
 		@media only screen and(max-width:$bp-small) {
 			width: 75%;
 		}
@@ -75,7 +78,7 @@ export default {
 		border-radius: 3px;
 		z-index: 10;
 		width: 100%;
-
+		height: 100%;
 		object-fit: cover;
 	}
 }

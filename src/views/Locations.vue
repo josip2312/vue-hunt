@@ -5,7 +5,7 @@
 		</h2>
 		<article class="location-article" v-scrollanimation>
 			<div class="location-image">
-				<img src="../assets/img/1.jpg" alt="Nature photo" />
+				<img src="../assets/img/gal-1-big.jpg" alt="Nature photo" />
 			</div>
 			<div class="location-textbox">
 				<div class="location-text">
@@ -23,7 +23,7 @@
 				<a href="#rent" class="btn btn-sec">Lovi</a>
 			</div>
 			<div class="location-image">
-				<img src="../assets/img/1.jpg" alt="Nature photo" />
+				<img src="../assets/img/gal-2-big.jpg" alt="Nature photo" />
 			</div>
 		</article>
 	</section>

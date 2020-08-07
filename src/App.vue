@@ -26,6 +26,7 @@ export default {
 			lang: 'en',
 			amp: true,
 		},
+		meta: [{ name: 'description', content: '' }],
 	},
 	components: {
 		Header,

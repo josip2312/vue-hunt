@@ -11,7 +11,7 @@
 				class="gallery-image"
 				:src="makeUrl(photo.filename)"
 				alt="Nature image"
-				@click="changePicture(photo.filename)"
+				@click="changePicture(photo.filenameBig)"
 			/>
 		</div>
 		<transition name="fade" mode="out-in">
@@ -39,22 +39,28 @@ export default {
 			showModal: false,
 			photos: [
 				{
-					filename: '1.jpg',
+					filename: 'gal-1-small.jpg',
+					filenameBig: 'gal-1-big.jpg',
 				},
 				{
-					filename: '2.jpg',
+					filename: 'gal-2-small.jpg',
+					filenameBig: 'gal-2-big.jpg',
 				},
 				{
-					filename: '3.jpg',
+					filename: 'gal-3-small.jpg',
+					filenameBig: 'gal-3-big.jpg',
 				},
 				{
-					filename: '4.jpg',
+					filename: 'gal-4-small.jpg',
+					filenameBig: 'gal-4-big.jpg',
 				},
 				{
-					filename: '5.jpg',
+					filename: 'gal-5-small.jpg',
+					filenameBig: 'gal-5-big.jpg',
 				},
 				{
-					filename: '6.jpg',
+					filename: 'gal-6-small.jpg',
+					filenameBig: 'gal-6-big.jpg',
 				},
 			],
 		};
