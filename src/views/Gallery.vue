@@ -74,7 +74,6 @@ export default {
 			return require(`../assets/img/${filename}`);
 		},
 		hideModal() {
-			console.log('called');
 			this.showModal = false;
 		},
 	},

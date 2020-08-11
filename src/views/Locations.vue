@@ -12,7 +12,7 @@
 					Nalazimo se u Prisoju, lijepom mjestu koje leži na Buskom
 					jezeru.
 				</div>
-				<a href="#rent" class="btn btn-sec">Vidi smjestaj</a>
+				<button href="#rent" class="btn btn-sec">Vidi smjestaj</button>
 			</div>
 		</article>
 		<article class="location-article reverse" v-scrollanimation>
@@ -20,7 +20,7 @@
 				<div class="location-text">
 					Lov se odvija u Bosanskom Grahovu.
 				</div>
-				<a href="#rent" class="btn btn-sec">Lovi</a>
+				<button href="#contact" class="btn btn-sec">Lovi</button>
 			</div>
 			<div class="location-image">
 				<img src="../assets/img/gal-2-big.jpg" alt="Nature photo" />

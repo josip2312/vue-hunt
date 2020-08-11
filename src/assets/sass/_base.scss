@@ -84,20 +84,26 @@ body {
 a {
 	text-decoration: none;
 }
+a:focus {
+	outline: 1px solid $accent;
+}
 .btn {
 	text-decoration: none;
-	border: 0;
+	border: none;
 	background-color: $accent;
-	padding: 1.4rem 2.6rem;
+	padding: 1.5rem 2.6rem;
 	color: $font-dark;
 	font-size: 1.8rem;
 	outline: none;
 	cursor: pointer;
 	transition: all 0.2s ease-out;
 	text-transform: uppercase;
-	text-align: center;
+
 	font-weight: 500;
 	border-radius: 3px;
+}
+.btn:focus {
+	outline: 2px solid $accent;
 }
 .btn-sec {
 	padding: 1rem 2.2rem;

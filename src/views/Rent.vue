@@ -70,11 +70,13 @@ export default {
 }
 .container {
 	width: 85%;
+
 	background-color: $primary-dark;
 	margin: 0 auto;
-	border-radius: 0.5rem;
+	border-radius: 3px;
 	@media only screen and(max-width:$bp-smallest) {
 		border-radius: 3px;
+		width: 90%;
 	}
 }
 .pictures {
@@ -85,10 +87,8 @@ export default {
 
 	margin: 0 auto;
 
-	width: 65%;
-	@media only screen and(max-width:$bp-smallest) {
-		width: 90%;
-	}
+	width: 90%;
+	max-width: 75rem;
 
 	.main-picture {
 		width: 100%;

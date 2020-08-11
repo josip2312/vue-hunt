@@ -48,16 +48,9 @@ export default {
 	.img-container {
 		position: relative;
 		margin: 0 auto;
-		width: 55%;
-		@media only screen and(max-width:$bp-large) {
-			width: 65%;
-		}
-		@media only screen and(max-width:$bp-small) {
-			width: 75%;
-		}
-		@media only screen and(max-width:$bp-smallest) {
-			width: 85%;
-		}
+		width: 85%;
+		max-width: 75rem;
+
 		.x-icon {
 			position: absolute;
 			top: -4rem;

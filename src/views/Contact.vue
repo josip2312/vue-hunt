@@ -73,14 +73,12 @@ export default {
 	justify-content: center;
 	align-items: center;
 
-	width: 45rem;
 	padding: 4rem 0;
 	background-color: $primary;
 	border-radius: 3px;
 
-	@media only screen and(max-width:$bp-smallest) {
-		width: 75vw;
-	}
+	width: 90%;
+	max-width: 45rem;
 	.form-group {
 		display: flex;
 		flex-direction: column;

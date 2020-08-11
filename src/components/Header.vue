@@ -136,7 +136,8 @@ export default {
 			a {
 				color: $grey;
 			}
-			a:hover {
+			a:hover,
+			a:focus {
 				color: $accent;
 			}
 		}

@@ -9,7 +9,6 @@
 					/>
 					<span>Prisoje 80240, BiH</span>
 				</div>
-				<span>Tomislavgrad</span>
 			</div>
 
 			<div class="footer-social">
@@ -63,12 +62,10 @@ export default {
 	.footer-contact {
 		display: flex;
 		justify-content: space-around;
-		flex-direction: column;
-
+		align-items: center;
 		.location {
 			display: flex;
 			align-items: center;
-			margin-bottom: 1rem;
 		}
 		img {
 			margin-right: 1rem;
