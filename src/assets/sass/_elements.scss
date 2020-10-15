@@ -1,0 +1,40 @@
+.dark {
+	color: $font-dark;
+}
+
+a:focus {
+	outline: 1px solid $accent;
+}
+.btn {
+	display: inline-block;
+	text-decoration: none;
+	border: none;
+	background-color: $accent;
+	padding: 0.8em 1.4em;
+	color: $font-dark;
+	font-size: 1.8rem;
+	outline: none;
+	cursor: pointer;
+	transition: all 0.2s ease-out;
+	text-transform: uppercase;
+
+	font-weight: 500;
+	border-radius: 3px;
+}
+.btn:focus {
+	outline: 2px solid $accent;
+}
+.btn-sec {
+	padding: 1rem 2.2rem;
+}
+@mixin absHeading {
+	position: absolute;
+	top: 5rem;
+
+	left: 7.5%;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+}
+.spacer > * + * {
+	margin-top: 2rem;
+}

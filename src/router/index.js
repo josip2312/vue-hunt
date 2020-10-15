@@ -12,7 +12,7 @@ const routes = [
 			content: 'Pocetna stranica',
 		},
 		component: () =>
-			import(/* webpackChunkName: "about" */ '../views/Landing.vue'),
+			import(/* webpackChunkName: "Landing" */ '@/views/Landing.vue'),
 	},
 ];
 

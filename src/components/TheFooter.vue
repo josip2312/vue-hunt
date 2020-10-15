@@ -3,18 +3,15 @@
 		<div class="footer-top">
 			<div class="footer-contact">
 				<div class="location">
-					<img
-						src="../assets/img/icons/location.svg"
-						alt="Location"
-					/>
+					<img src="@/assets/img/icons/location.svg" alt="Location" />
 					<span>Prisoje 80240, BiH</span>
 				</div>
 			</div>
 
 			<div class="footer-social">
-				<img src="../assets/img/icons/fb.svg" alt="Facebook" />
-				<img src="../assets/img/icons/ig.svg" alt="Instagram" />
-				<img src="../assets/img/icons/wapp.svg" alt="WhatsApp" />
+				<img src="@/assets/img/icons/fb.svg" alt="Facebook" />
+				<img src="@/assets/img/icons/ig.svg" alt="Instagram" />
+				<img src="@/assets/img/icons/wapp.svg" alt="WhatsApp" />
 			</div>
 		</div>
 		<div class="footer-bottom">
@@ -44,20 +41,18 @@ export default {
 	min-height: 30vh;
 	background-color: $primary;
 	color: $font-p;
-	@media only screen and(max-width:$bp-small) {
+	@media only screen and(max-width:$v-6) {
 		padding-bottom: 9vh;
 	}
 }
 .footer-top {
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-between;
 	align-items: center;
 
-	width: 75%;
+	width: 90%;
+	max-width: 50rem;
 	flex: 2;
-	@media only screen and(max-width:$bp-smallest) {
-		width: 90%;
-	}
 
 	.footer-contact {
 		display: flex;
@@ -97,6 +92,7 @@ export default {
 	width: 100%;
 	background-color: #022b29;
 	font-size: 1.2rem;
+
 	&--container {
 		display: flex;
 		align-items: center;
@@ -104,10 +100,8 @@ export default {
 
 		text-align: center;
 		margin: 0 auto;
-		width: 75%;
-		@media only screen and(max-width:$bp-smallest) {
-			width: 90%;
-		}
+		width: 90%;
+		max-width: 50rem;
 	}
 }
 </style>

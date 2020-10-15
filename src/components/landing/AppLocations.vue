@@ -5,7 +5,13 @@
 		</h2>
 		<article class="location-article" v-scrollanimation>
 			<div class="location-image">
-				<img src="../assets/img/gal-1-big.jpg" alt="Nature photo" />
+				<GalleryImage
+					:source="makeUrl('gal-1-big.jpg')"
+					altAttr="Nature photo"
+					className="notransform"
+					width="1920"
+					height="1280"
+				/>
 			</div>
 			<div class="location-textbox">
 				<div class="location-text">
@@ -23,19 +29,46 @@
 				<button href="#contact" class="btn btn-sec">Lovi</button>
 			</div>
 			<div class="location-image">
-				<img src="../assets/img/gal-2-big.jpg" alt="Nature photo" />
+				<GalleryImage
+					:source="makeUrl('gal-2-big.jpg')"
+					altAttr="Nature photo"
+					width="1920"
+					height="1280"
+					className="notransform"
+				/>
 			</div>
 		</article>
 	</section>
 </template>
 
 <script>
+import GalleryImage from '@/components/gallery/GalleryImage';
 export default {
 	name: 'Locations',
-	components: {},
+	data() {
+		return {
+			sourceOne: '@/assets/img/gal-1-big.jpg',
+			sourceTwo: ' @/assets/img/gal-2-big.jpg',
+		};
+	},
+	methods: {
+		makeUrl(filename) {
+			return require(`@/assets/img/${filename}`);
+		},
+	},
+	components: { GalleryImage },
 };
 </script>
 <style lang="scss" scoped>
+.before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+.enter {
+	opacity: 1;
+	transform: translateY(0);
+}
 #locations {
 	display: flex;
 	align-items: center;
@@ -44,7 +77,9 @@ export default {
 
 	min-height: 90vh;
 	background-color: $secondary;
-	padding: 5rem 0;
+
+	padding-top: 7rem;
+	padding-bottom: 7.5rem;
 	position: relative;
 }
 .heading-2 {
@@ -58,11 +93,11 @@ export default {
 	background-color: $primary;
 	border-radius: 3px;
 
-	@media only screen and(max-width:$bp-medium) {
+	@media only screen and(max-width:$v-10) {
 		flex-direction: column;
 	}
 
-	@media only screen and(max-width:$bp-smallest) {
+	@media only screen and(max-width:$v-5) {
 		width: 90%;
 	}
 
@@ -80,7 +115,7 @@ export default {
 			object-fit: cover;
 		}
 
-		@media only screen and(max-width:$bp-small) {
+		@media only screen and(max-width:$v-10) {
 			flex-direction: column;
 		}
 	}
@@ -97,12 +132,13 @@ export default {
 
 		.location-text {
 			width: 75%;
+			max-width: 40rem;
 			font-size: 2rem;
 			color: $font-p;
 			margin-bottom: 2.5rem;
 		}
 
-		@media only screen and(max-width:$bp-medium) {
+		@media only screen and(max-width:$v-10) {
 			padding: 3rem 0;
 			justify-content: center;
 			align-items: center;
@@ -110,7 +146,7 @@ export default {
 	}
 }
 .reverse {
-	@media only screen and(max-width:$bp-medium) {
+	@media only screen and(max-width:$v-10) {
 		flex-direction: column-reverse;
 	}
 }

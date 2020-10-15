@@ -3,21 +3,26 @@
 		<h2 class="heading-2">Smjestaj</h2>
 		<div class="container">
 			<div class="pictures">
-				<img
-					:src="makeUrl(mainFile)"
-					class="main-picture"
-					alt="Acommodation image"
-					v-scrollanimation
+				<GalleryImage
+					:source="makeUrl(mainFile)"
+					:imgSource="imgSource"
+					altAttr="Acommodation image"
+					className="notransform"
+					width="1920"
+					height="1282"
 				/>
 
 				<div class="preview-pictures" v-scrollanimation>
 					<img
+						loading="lazy"
 						v-for="(photo, index) in photos"
 						:key="index"
 						:src="makeUrl(photo.filename)"
 						@click="changePicture(photo.filenameBig)"
 						:class="{ active: photo.filenameBig === mainFile }"
 						alt="Acommodation image"
+						width="640"
+						height="427"
 					/>
 				</div>
 			</div>
@@ -26,11 +31,17 @@
 </template>
 
 <script>
+import GalleryImage from '@/components/gallery/GalleryImage';
+
 export default {
 	name: 'Rent',
+	components: {
+		GalleryImage,
+	},
 	data() {
 		return {
 			mainFile: 'room1big.jpg',
+			imgSource: '',
 			photos: [
 				{
 					filename: 'room1small.jpg',
@@ -49,20 +60,33 @@ export default {
 	},
 	methods: {
 		changePicture(filename) {
+			this.imgSource = this.makeUrl(filename);
 			this.mainFile = filename;
 		},
 		makeUrl(filename) {
-			return require(`../assets/img/${filename}`);
+			return require(`@/assets/img/${filename}`);
 		},
 	},
 };
 </script>
 
 <style lang="scss" scoped>
+/* .preview-pictures {
+	.before-enter {
+		opacity: 0;
+		transform: translateY(5rem);
+		transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+	}
+	.enter {
+		opacity: 1;
+		transform: translateY(0);
+	}
+} */
+
 #rent {
 	background-color: $primary;
-	padding: 5rem 0;
-	padding-top: 10rem;
+	padding: 7.5rem 0;
+	padding-top: 12rem;
 	position: relative;
 }
 .heading-2 {
@@ -74,8 +98,7 @@ export default {
 	background-color: $primary-dark;
 	margin: 0 auto;
 	border-radius: 3px;
-	@media only screen and(max-width:$bp-smallest) {
-		border-radius: 3px;
+	@media only screen and(max-width:$v-5) {
 		width: 90%;
 	}
 }
@@ -96,7 +119,7 @@ export default {
 		border-radius: 3px;
 		overflow: hidden;
 		margin-bottom: 1.5rem;
-		transition: all 0.2s;
+		transition: opacity 0.2s ease-in-out;
 	}
 	.preview-pictures {
 		display: flex;
@@ -105,15 +128,17 @@ export default {
 
 		width: 100%;
 		img {
+			width: 100%;
+			height: auto;
 			border-radius: 3px;
 			overflow: hidden;
 			flex: 1;
-			transition: all 0.2s ease;
+			transition: opacity 0.2s ease-in-out;
 			opacity: 0.5;
 			cursor: pointer;
 			width: 33.3333%;
 		}
-		.active {
+		img.active {
 			opacity: 1;
 		}
 	}

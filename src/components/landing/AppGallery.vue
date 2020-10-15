@@ -4,20 +4,18 @@
 			Galerija
 		</h2>
 		<div class="gallery">
-			<img
-				v-scrollanimation
-				v-for="(photo, index) in photos"
-				:key="index"
-				class="gallery-image"
-				:src="makeUrl(photo.filename)"
-				alt="Nature image"
-				@click="changePicture(photo.filenameBig)"
+			<GalleryImage
+				v-for="photo in photos"
+				:key="photo.filename"
+				altAttr="Nature image"
+				:source="makeUrl(photo.filename)"
+				@change-picture="changePicture(photo.filenameBig)"
 			/>
 		</div>
-		<transition name="fade" mode="out-in">
+		<transition mode="out-in" name="fade">
 			<GalleryModal
 				v-if="showModal"
-				:mainFile="mainFile"
+				:source="source"
 				@close="showModal = false"
 			/>
 		</transition>
@@ -27,15 +25,17 @@
 <script>
 import ClickOutside from 'vue-click-outside';
 
-import GalleryModal from '@/components/GalleryModal.vue';
+import GalleryImage from '@/components/gallery/GalleryImage';
+import GalleryModal from '@/components/gallery/GalleryModal';
 export default {
 	name: 'Gallery',
 	components: {
 		GalleryModal,
+		GalleryImage,
 	},
 	data() {
 		return {
-			mainFile: null,
+			source: null,
 			showModal: false,
 			photos: [
 				{
@@ -67,11 +67,11 @@ export default {
 	},
 	methods: {
 		changePicture(filename) {
-			this.mainFile = filename;
+			this.source = this.makeUrl(filename);
 			this.showModal = true;
 		},
 		makeUrl(filename) {
-			return require(`../assets/img/${filename}`);
+			return require(`@/assets/img/${filename}`);
 		},
 		hideModal() {
 			this.showModal = false;
@@ -86,14 +86,16 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+//scroll animations
+
 #gallery {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	background-color: $primary;
-	padding: 5rem 0;
-	padding-top: 10rem;
+	padding: 7.5rem 0;
+	padding-top: 12rem;
 	position: relative;
 }
 .heading-2 {
@@ -103,40 +105,20 @@ export default {
 	width: 85%;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: repeat(2, 1fr);
+
 	gap: 2.5rem;
 
-	@media only screen and(max-width:$bp-large) {
+	@media only screen and(max-width:$v-10) {
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: repeat(3, 1fr);
 	}
-	@media only screen and(max-width:$bp-smaller) {
+	@media only screen and(max-width:$v-6) {
 		grid-template-columns: repeat(1, 1fr);
-		grid-template-rows: repeat(auto-fit, 1fr);
 	}
-	@media only screen and(max-width:$bp-smallest) {
+	@media only screen and(max-width:$v-5) {
 		width: 90%;
 	}
-	.gallery-image {
-		height: 25rem;
-		@media only screen and(max-width:$bp-smaller) {
-			height: 30rem;
-		}
-	}
-	img {
-		border-radius: 3px;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		transition: all 0.3s ease;
-		transform-origin: center;
-		backface-visibility: hidden;
+	& > * {
 		cursor: pointer;
-	}
-	@media only screen and(min-width:$bp-small) {
-		img:hover {
-			transform: scale(1.04);
-		}
 	}
 }
 </style>

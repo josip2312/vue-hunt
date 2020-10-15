@@ -1,23 +1,16 @@
 <template>
 	<div id="app">
-		<Header />
-		<Landing />
-		<Gallery />
-		<Locations />
-		<Rent />
-		<Contact />
-		<!-- <router-view /> -->
-		<Footer />
+		<TheHeader />
+		<div class="wrap">
+			<router-view />
+		</div>
+		<TheFooter />
 	</div>
 </template>
 <script>
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-import Landing from '@/views/Landing.vue';
-import Gallery from '@/views/Gallery.vue';
-import Locations from '@/views/Locations.vue';
-import Rent from '@/views/Rent.vue';
-import Contact from '@/views/Contact.vue';
+import TheHeader from '@/components/TheHeader';
+import TheFooter from '@/components/TheFooter';
+
 export default {
 	metaInfo: {
 		title: 'Lovacka agencija Sljuka',
@@ -29,27 +22,16 @@ export default {
 		meta: [{ name: 'description', content: '' }],
 	},
 	components: {
-		Header,
-		Footer,
-		Landing,
-		Gallery,
-		Locations,
-		Rent,
-		Contact,
+		TheHeader,
+		TheFooter,
 	},
 };
 </script>
 
 <style lang="scss">
-@import 'assets/sass/base';
-.fade-enter-active,
-.fade-leave-active {
-	transition-duration: 0.2s;
-	transition-property: opacity;
-	transition-timing-function: ease;
-}
-.fade-enter,
-.fade-leave-to {
-	opacity: 0;
+@import '@/assets/sass/app.scss';
+
+.wrap {
+	min-height: 100vh;
 }
 </style>

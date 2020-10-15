@@ -1,8 +1,8 @@
 <template>
-	<div class="picture" @click="$emit('close')" @keyup="closeModal">
-		<div class="img-container">
-			<img class="x-icon" src="../assets/img/icons/x.svg" alt="Close" />
-			<img :src="makeUrl(mainFile)" alt="" @click.stop="" />
+	<div class="picture" @click="$emit('close')" @keyup.esc="$emit('close')">
+		<div class="picture-container">
+			<img class="x-icon" src="@/assets/img/icons/x.svg" alt="Close" />
+			<img class="image" :src="source" alt="" @click.stop="" />
 		</div>
 	</div>
 </template>
@@ -10,15 +10,15 @@
 <script>
 export default {
 	name: 'GalleryModal',
-	props: ['mainFile'],
+	props: {
+		source: {
+			type: String,
+			required: true,
+		},
+	},
 	methods: {
 		makeUrl(filename) {
-			return require(`../assets/img/${filename}`);
-		},
-		closeModal(e) {
-			if (e.keyCode === 27) {
-				this.$emit('close');
-			}
+			return require(`@/assets/img/${filename}`);
 		},
 	},
 	mounted() {
@@ -43,9 +43,9 @@ export default {
 	height: 100vh;
 	z-index: 100;
 
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 
-	.img-container {
+	.picture-container {
 		position: relative;
 		margin: 0 auto;
 		width: 85%;
@@ -53,26 +53,26 @@ export default {
 
 		.x-icon {
 			position: absolute;
-			top: -4rem;
-			right: -4rem;
-			width: 4rem;
-			height: 4rem;
+			top: -3.5rem;
+			right: -3.5rem;
+			width: 3.5rem;
+			height: 3.5rem;
 			padding: 0.8rem;
 			border-radius: 50%;
 			background-color: $primary;
 			cursor: pointer;
-			@media only screen and(max-width:$bp-smallest) {
+			@media only screen and(max-width:$v-5) {
 				top: -3.5rem;
 				right: -2.5rem;
 			}
 		}
-	}
-	img {
-		border-radius: 3px;
-		z-index: 10;
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		.image {
+			border-radius: 3px;
+			z-index: 10;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 </style>

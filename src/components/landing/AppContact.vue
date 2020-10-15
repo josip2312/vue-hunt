@@ -8,7 +8,7 @@
 				<input type="email" id="email" name="email" />
 				<img
 					class="icon-email"
-					src="../assets/img/icons/email.svg"
+					src="@/assets/img/icons/email.svg"
 					alt="Email icon"
 				/>
 			</div>
@@ -17,7 +17,7 @@
 				<input type="text" id="subject" name="subject" />
 				<img
 					class="icon-subject"
-					src="../assets/img/icons/title.svg"
+					src="@/assets/img/icons/title.svg"
 					alt="Title icon"
 				/>
 			</div>
@@ -31,7 +31,7 @@
 				></textarea>
 				<img
 					class="icon-text"
-					src="../assets/img/icons/text.svg"
+					src="@/assets/img/icons/text.svg"
 					alt="Content icon"
 				/>
 			</div>
@@ -54,11 +54,9 @@ export default {
 	flex-direction: column;
 
 	background-color: $secondary;
-	padding: 5rem 0;
+	padding: 7.5rem 0;
+	padding-top: 12rem;
 	position: relative;
-	@media only screen and(max-width:$bp-smallest) {
-		padding-top: 9rem;
-	}
 }
 
 .heading-2 {
@@ -78,13 +76,13 @@ export default {
 	border-radius: 3px;
 
 	width: 90%;
-	max-width: 45rem;
+	max-width: 50rem;
 	.form-group {
 		display: flex;
 		flex-direction: column;
 
 		margin: 0 auto;
-		width: 75%;
+		width: 85%;
 		position: relative;
 		label {
 			margin-bottom: 1rem;
@@ -92,8 +90,8 @@ export default {
 		input,
 		textarea {
 			margin-bottom: 2rem;
-			padding: 0.9rem 2rem;
-			padding-left: 5rem;
+			padding: 1rem 2rem;
+			padding-left: 4rem;
 			border: none;
 			outline: none;
 			caret-color: $font-dark;
@@ -101,7 +99,7 @@ export default {
 			font-size: 1.8rem;
 			background-color: $font-white;
 			border: 2px solid $font-white;
-			transition: all 0.2s ease;
+			transition: border 0.2s ease-in-out;
 		}
 		input:focus,
 		textarea:focus {
@@ -111,11 +109,10 @@ export default {
 		.icon-email,
 		.icon-subject {
 			position: absolute;
-			bottom: 3rem;
+			bottom: 3.4rem;
 			left: 1rem;
 			width: 2rem;
 			height: 2rem;
-			transform: rotate(0);
 		}
 		.icon-text {
 			position: absolute;
@@ -126,7 +123,7 @@ export default {
 		}
 	}
 	button {
-		width: 75%;
+		width: 85%;
 		margin: 0 auto;
 	}
 }
