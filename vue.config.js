@@ -1,5 +1,6 @@
 const path = require('path');
 const PrerenderSpaPlugin = require('prerender-spa-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 //const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
@@ -25,5 +26,9 @@ module.exports = {
 						routes: ['/'],
 					}),
 			);
+		config.plugins.delete('prefetch');
+
+		// and this line
+		config.plugin('CompressionPlugin').use(CompressionPlugin);
 	},
 };
