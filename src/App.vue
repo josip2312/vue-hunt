@@ -1,13 +1,12 @@
 <template>
 	<div id="app">
 		<TheHeader />
-		<div class="wrap">
-			<router-view />
-		</div>
+		<Landing />
 		<TheFooter />
 	</div>
 </template>
 <script>
+import Landing from '@/views/Landing';
 import TheHeader from '@/components/TheHeader';
 import TheFooter from '@/components/TheFooter';
 
@@ -24,6 +23,7 @@ export default {
 	components: {
 		TheHeader,
 		TheFooter,
+		Landing,
 	},
 };
 </script>

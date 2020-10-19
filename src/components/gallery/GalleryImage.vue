@@ -15,20 +15,7 @@
 <script>
 export default {
 	name: 'GalleryImage',
-	computed: {
-		dataUrl() {
-			const { width, height } = this.$attrs;
-			if (!width || !height) return '';
-			console.log(width, height);
-			// create a tiny png with matching aspect ratio as img
-			const w = 100;
-			const canvas = document.createElement('canvas');
-			canvas.width = w;
-			canvas.height = (height / width) * w;
 
-			return canvas.toDataURL();
-		},
-	},
 	props: {
 		source: {
 			type: String,
@@ -82,7 +69,7 @@ export default {
 	}
 }
 .image-item {
-	height: auto;
+	height: 100%;
 	width: 100%;
 	object-fit: cover;
 	border-radius: 3px;

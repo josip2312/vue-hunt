@@ -12,8 +12,7 @@
 		"prerender-spa-plugin": "^3.4.0",
 		"vue": "^2.6.11",
 		"vue-click-outside": "^1.1.0",
-		"vue-meta": "^2.4.0",
-		"vue-router": "^3.2.0"
+		"vue-meta": "^2.4.0"
 	},
 	"devDependencies": {
 		"@vue/cli-plugin-babel": "~4.4.0",

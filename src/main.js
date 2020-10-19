@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import App from './App.vue';
-import router from './router';
+
 import scrollAnimation from './directives/scrollAnimation';
 import lazyLoad from './directives/lazyLoad';
 import VueMeta from 'vue-meta';
@@ -16,6 +16,5 @@ Vue.use(VueMeta, {
 Vue.config.productionTip = false;
 
 new Vue({
-	router,
 	render: (h) => h(App),
 }).$mount('#app');

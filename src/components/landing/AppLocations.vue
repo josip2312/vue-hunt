@@ -24,7 +24,8 @@
 		<article class="location-article reverse" v-scrollanimation>
 			<div class="location-textbox">
 				<div class="location-text">
-					Lov se odvija u Bosanskom Grahovu.
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Aut, laborum..
 				</div>
 				<button href="#contact" class="btn btn-sec">Lovi</button>
 			</div>

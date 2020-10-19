@@ -15,13 +15,13 @@
 
 		<nav class="navbar">
 			<a href="#showcase">
-				<h3 class="heading-3">Sljuka</h3>
+				<div class="logo">Šljuka</div>
 			</a>
 			<ul :class="{ visible: toggled }">
-				<li><a href="#showcase">Pocetna</a></li>
+				<li><a href="#showcase">Naslovnica</a></li>
 				<li><a href="#gallery">Galerija</a></li>
 				<li><a href="#locations">Lokacija</a></li>
-				<li><a href="#rent">Smjestaj</a></li>
+				<li><a href="#rent">Smještaj</a></li>
 				<li><a href="#contact">Kontakt</a></li>
 			</ul>
 		</nav>
@@ -91,6 +91,10 @@ export default {
 	height: 100%;
 	width: 85%;
 	margin: 0 auto;
+
+	.logo {
+		font-size: 2.2rem;
+	}
 
 	ul {
 		display: flex;

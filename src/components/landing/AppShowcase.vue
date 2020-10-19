@@ -3,11 +3,11 @@
 		<div class="showcase-info ">
 			<div class="contact-1">
 				<img src="@/assets/img/icons/phone2.svg" alt="Phone icon" />
-				<span>063-132-823</span>
+				<span>063-123-123</span>
 			</div>
 			<div class="contact-2">
 				<img src="@/assets/img/icons/phone2.svg" alt="Phone icon" />
-				<span>063-213-321</span>
+				<span>063-123-123</span>
 			</div>
 
 			<a href="#contact" class="email">
@@ -17,8 +17,11 @@
 		</div>
 		<div class="hero">
 			<div class="showcase-title spacer">
-				<h1 class="heading-1">Lovacka agencija Sljuka</h1>
-				<p>Uzivaj u prirodi lorem ipsum dolor sit amet.</p>
+				<h1 class="heading-1">Lovačka agencija Šljuka</h1>
+				<p>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+					Tenetur totam reiciendis.
+				</p>
 				<a href="#contact" class="btn">Lovi s nama</a>
 			</div>
 		</div>
@@ -69,8 +72,8 @@ export default {
 	left: 7.5%;
 	font-size: 1.4rem;
 	color: $font-p;
-
-	animation: left 1s forwards ease-in-out;
+	opacity: 0;
+	animation: left 750ms forwards ease-in-out 500ms;
 
 	& > * {
 		display: flex;
@@ -93,6 +96,7 @@ export default {
 	max-width: 70rem;
 	p {
 		font-size: 1.8rem;
+		max-width: 40ch;
 	}
 	@media only screen and(max-width:$v-5) {
 		.heading-1 {
@@ -100,12 +104,12 @@ export default {
 		}
 		text-align: center;
 	}
-	margin-top: -7.5rem;
+	margin-top: -5rem;
 	.showcase-title {
 		display: block;
 		width: 100%;
 
-		animation: down 1s forwards ease-in-out;
+		animation: down 750ms forwards ease-in-out;
 
 		p {
 			color: $grey;
