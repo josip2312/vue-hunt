@@ -8,6 +8,8 @@
 			:alt="altAttr"
 			:class="className"
 			@click="$emit('change-picture')"
+			:width="width"
+			:height="height"
 		/>
 	</figure>
 </template>

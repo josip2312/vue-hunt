@@ -10,6 +10,8 @@
 				altAttr="Nature image"
 				:source="makeUrl(photo.filename)"
 				@change-picture="changePicture(photo.filenameBig)"
+				width="620"
+				height="413"
 			/>
 		</div>
 		<transition mode="out-in" name="fade">

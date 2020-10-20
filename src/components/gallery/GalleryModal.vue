@@ -2,7 +2,14 @@
 	<div class="picture" @click="$emit('close')" @keyup.esc="$emit('close')">
 		<div class="picture-container">
 			<img class="x-icon" src="@/assets/img/icons/x.svg" alt="Close" />
-			<img class="image" :src="source" alt="" @click.stop="" />
+			<img
+				class="image"
+				:src="source"
+				alt=""
+				@click.stop=""
+				width="1920"
+				height="1280"
+			/>
 		</div>
 	</div>
 </template>
