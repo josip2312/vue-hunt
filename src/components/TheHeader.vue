@@ -31,12 +31,12 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside';
+import ClickOutside from "vue-click-outside";
 
-import TheMobileNav from '@/components/layout/TheMobileNav';
+import TheMobileNav from "@/components/layout/TheMobileNav";
 
 export default {
-	name: 'Header',
+	name: "Header",
 	components: {
 		TheMobileNav,
 	},
@@ -58,7 +58,7 @@ export default {
 		},
 	},
 	mounted() {
-		window.addEventListener('scroll', this.updateScroll);
+		window.addEventListener("scroll", this.updateScroll);
 		this.popupItem = this.$el;
 	},
 	directives: {
@@ -68,7 +68,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .header {
-	height: 9vh;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -94,6 +93,7 @@ export default {
 
 	.logo {
 		font-size: 2.2rem;
+		padding: 1.5rem 0;
 	}
 
 	ul {
@@ -127,13 +127,13 @@ export default {
 			top: 0;
 			right: 0;
 			height: 100vh;
-			width: 60vw;
+			width: 70vw;
 
 			background-color: $primary-dark;
 			transform: scaleX(0);
 			transform-origin: right;
 			opacity: 0;
-			transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+			transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
 
 			li {
 				opacity: 0;
@@ -151,7 +151,7 @@ export default {
 	.visible {
 		li {
 			opacity: 1;
-			transition: opacity 250ms ease-in-out 450ms;
+			transition: opacity 250ms ease-in-out 350ms;
 		}
 		transform: scaleX(1);
 		opacity: 1;

@@ -1,5 +1,5 @@
 <template>
-	<div class="picture" @click="$emit('close')" @keyup.esc="$emit('close')">
+	<div class="picture" @click="$emit('close')">
 		<div class="picture-container">
 			<img class="x-icon" src="@/assets/img/icons/x.svg" alt="Close" />
 			<img
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-	name: 'GalleryModal',
+	name: "GalleryModal",
 	props: {
 		source: {
 			type: String,
@@ -27,12 +27,15 @@ export default {
 		makeUrl(filename) {
 			return require(`@/assets/img/${filename}`);
 		},
+		closeModal(e) {
+			if (e.keyCode === 27) this.$emit("close");
+		},
 	},
 	mounted() {
-		window.addEventListener('keyup', this.closeModal);
+		window.addEventListener("keyup", this.closeModal);
 	},
 	destroyed() {
-		window.removeEventListener('keyup', this.closeModal);
+		window.removeEventListener("keyup", this.closeModal);
 	},
 };
 </script>

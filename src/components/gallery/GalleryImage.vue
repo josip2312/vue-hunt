@@ -1,10 +1,10 @@
 <template>
 	<figure v-lazyload class="image-wrapper">
 		<img
+			class="image-item"
 			ref="image"
 			:data-url="source"
 			:src="placeholderSrc(width, height)"
-			class="image-item"
 			:alt="altAttr"
 			:class="className"
 			@click="$emit('change-picture')"
@@ -16,7 +16,7 @@
 
 <script>
 export default {
-	name: 'GalleryImage',
+	name: "GalleryImage",
 
 	props: {
 		source: {
@@ -41,7 +41,7 @@ export default {
 		},
 	},
 	watch: {
-		imgSource: function() {
+		imgSource: function () {
 			this.$refs.image.src = this.imgSource;
 		},
 	},

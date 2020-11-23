@@ -17,7 +17,7 @@
 
 <script>
 export default {
-	name: 'TheMobileNav',
+	name: "TheMobileNav",
 };
 </script>
 
@@ -34,7 +34,7 @@ export default {
 		position: fixed;
 		bottom: 0;
 		left: 0;
-		min-height: 9vh;
+
 		width: 100%;
 
 		& > * {
@@ -42,6 +42,7 @@ export default {
 			justify-content: center;
 			align-items: center;
 
+			padding: 1.35rem 0;
 			font-size: 1.8rem;
 			flex: 1;
 			text-align: center;

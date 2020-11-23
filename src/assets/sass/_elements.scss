@@ -27,14 +27,7 @@ a:focus {
 .btn-sec {
 	padding: 1rem 2.2rem;
 }
-@mixin absHeading {
-	position: absolute;
-	top: 5rem;
 
-	left: 7.5%;
-	text-transform: uppercase;
-	letter-spacing: 6px;
-}
 .spacer > * + * {
 	margin-top: 2rem;
 }

@@ -1,8 +1,6 @@
 <template>
 	<section id="locations">
-		<h2 class="heading-2 dark">
-			Lokacije
-		</h2>
+		<h2 class="heading-2 dark">Lokacije</h2>
 		<article class="location-article" v-scrollanimation>
 			<div class="location-image">
 				<GalleryImage
@@ -43,13 +41,13 @@
 </template>
 
 <script>
-import GalleryImage from '@/components/gallery/GalleryImage';
+import GalleryImage from "@/components/gallery/GalleryImage";
 export default {
-	name: 'Locations',
+	name: "Locations",
 	data() {
 		return {
-			sourceOne: '@/assets/img/gal-1-big.jpg',
-			sourceTwo: ' @/assets/img/gal-2-big.jpg',
+			sourceOne: "@/assets/img/gal-1-big.jpg",
+			sourceTwo: " @/assets/img/gal-2-big.jpg",
 		};
 	},
 	methods: {
@@ -79,8 +77,8 @@ export default {
 	min-height: 90vh;
 	background-color: $secondary;
 
-	padding-top: 7rem;
-	padding-bottom: 7.5rem;
+	padding-top: 15rem;
+	padding-bottom: 10rem;
 	position: relative;
 }
 .heading-2 {
@@ -100,10 +98,6 @@ export default {
 
 	@media only screen and(max-width:$v-5) {
 		width: 90%;
-	}
-
-	&:not(:first-child) {
-		margin-top: 5rem;
 	}
 
 	.location-image {
@@ -147,6 +141,7 @@ export default {
 	}
 }
 .reverse {
+	margin-top: 5rem;
 	@media only screen and(max-width:$v-10) {
 		flex-direction: column-reverse;
 	}

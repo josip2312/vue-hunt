@@ -2,7 +2,7 @@
 	<section id="contact">
 		<h2 class="heading-2 dark">Kontakt</h2>
 		<h3 class="heading-3 dark" v-scrollanimation>Javi se!</h3>
-		<form class="form" v-scrollanimation @submit.prevent="">
+		<form class="form" v-scrollanimation>
 			<div class="form-group">
 				<label for="email">Email adresa</label>
 				<input type="email" id="email" name="email" />
@@ -42,11 +42,20 @@
 
 <script>
 export default {
-	name: 'Contact',
+	name: "Contact",
 };
 </script>
 
 <style lang="scss" scoped>
+.before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+.enter {
+	opacity: 1;
+	transform: translateY(0);
+}
 #contact {
 	display: flex;
 	align-items: center;
@@ -77,6 +86,7 @@ export default {
 
 	width: 90%;
 	max-width: 50rem;
+
 	.form-group {
 		display: flex;
 		flex-direction: column;

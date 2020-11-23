@@ -1,8 +1,6 @@
 <template>
 	<section id="gallery">
-		<h2 class="heading-2">
-			Galerija
-		</h2>
+		<h2 class="heading-2">Galerija</h2>
 		<div class="gallery">
 			<GalleryImage
 				v-for="photo in photos"
@@ -25,12 +23,12 @@
 </template>
 
 <script>
-import ClickOutside from 'vue-click-outside';
+import ClickOutside from "vue-click-outside";
 
-import GalleryImage from '@/components/gallery/GalleryImage';
-import GalleryModal from '@/components/gallery/GalleryModal';
+import GalleryImage from "@/components/gallery/GalleryImage";
+import GalleryModal from "@/components/gallery/GalleryModal";
 export default {
-	name: 'Gallery',
+	name: "Gallery",
 	components: {
 		GalleryModal,
 		GalleryImage,
@@ -41,28 +39,28 @@ export default {
 			showModal: false,
 			photos: [
 				{
-					filename: 'gal-1-small.jpg',
-					filenameBig: 'gal-1-big.jpg',
+					filename: "gal-1-small.jpg",
+					filenameBig: "gal-1-big.jpg",
 				},
 				{
-					filename: 'gal-2-small.jpg',
-					filenameBig: 'gal-2-big.jpg',
+					filename: "gal-2-small.jpg",
+					filenameBig: "gal-2-big.jpg",
 				},
 				{
-					filename: 'gal-3-small.jpg',
-					filenameBig: 'gal-3-big.jpg',
+					filename: "gal-3-small.jpg",
+					filenameBig: "gal-3-big.jpg",
 				},
 				{
-					filename: 'gal-4-small.jpg',
-					filenameBig: 'gal-4-big.jpg',
+					filename: "gal-4-small.jpg",
+					filenameBig: "gal-4-big.jpg",
 				},
 				{
-					filename: 'gal-5-small.jpg',
-					filenameBig: 'gal-5-big.jpg',
+					filename: "gal-5-small.jpg",
+					filenameBig: "gal-5-big.jpg",
 				},
 				{
-					filename: 'gal-6-small.jpg',
-					filenameBig: 'gal-6-big.jpg',
+					filename: "gal-6-small.jpg",
+					filenameBig: "gal-6-big.jpg",
 				},
 			],
 		};
@@ -89,15 +87,23 @@ export default {
 </script>
 <style lang="scss" scoped>
 //scroll animations
-
+.before-enter {
+	opacity: 0;
+	transform: translateY(5rem);
+	transition: transform 800ms ease-in-out, opacity 800ms ease-in-out;
+}
+.enter {
+	opacity: 1;
+	transform: translateY(0);
+}
 #gallery {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	background-color: $primary;
-	padding: 7.5rem 0;
-	padding-top: 12rem;
+	padding-top: 15rem;
+	padding-bottom: 10rem;
 	position: relative;
 }
 .heading-2 {

@@ -1,0 +1,29 @@
+$primary: #004643;
+$primary-dark: #022b29;
+
+$secondary: #abd1c6;
+$accent: #f9bc60;
+
+$grey: #e5e5e5;
+
+$font-white: #fffffe;
+$font-dark: #001e1d;
+$font-p: #abd1c6;
+
+$v-20: 125em; //2000px
+$v-14: 87.5em; //1400px
+$v-12: 75em; //1200px
+$v-10: 62.5em; //1000px
+$v-8: 50em; //800px
+$v-7: 43.75em; //700px
+$v-6: 37.5em; //600px
+$v-5: 31.25em; //500px
+
+@mixin absHeading {
+	position: absolute;
+	top: 5rem;
+
+	left: 7.5%;
+	text-transform: uppercase;
+	letter-spacing: 6px;
+}

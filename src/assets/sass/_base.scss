@@ -1,15 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Nunito:wght@400;600&display=swap');
-$primary: #004643;
-$primary-dark: #022b29;
-
-$secondary: #abd1c6;
-$accent: #f9bc60;
-
-$grey: #e5e5e5;
-
-$font-white: #fffffe;
-$font-dark: #001e1d;
-$font-p: #abd1c6;
 
 * {
 	margin: 0;
@@ -20,15 +9,6 @@ $font-p: #abd1c6;
 *::after {
 	box-sizing: inherit;
 }
-
-$v-20: 125em; //2000px
-$v-14: 87.5em; //1400px
-$v-12: 75em; //1200px
-$v-10: 62.5em; //1000px
-$v-8: 50em; //800px
-$v-7: 43.75em; //700px
-$v-6: 37.5em; //600px
-$v-5: 31.25em; //500px
 
 html {
 	box-sizing: border-box;
@@ -69,8 +49,9 @@ body {
 }
 .heading-2 {
 	font-family: 'Nunito' sans-serif;
-	font-size: 2.2rem;
-	font-weight: 500;
+	font-size: 2.5rem;
+	letter-spacing: 4px;
+	font-weight: 600;
 	line-height: 1;
 }
 .heading-3 {
